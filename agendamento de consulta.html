@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento de Consultas</title>
+  <style>
+    /* Estilos CSS para o formulário de agendamento */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Agendamento de Consultas</h1>
+  <form id="appointmentForm">
+    <input type="text" id="patientName" placeholder="Nome do Paciente" required>
+    <input type="date" id="appointmentDate" required>
+    <select id="doctor">
+      <option value="Dr. Smith">Dr. Smith</option>
+      <option value="Dr. Johnson">Dr. Johnson</option>
+      <option value="Dr. Williams">Dr. Williams</option>
+    </select>
+    <button type="submit">Agendar Consulta</button>
+  </form>
+  <script>
+    // Código JavaScript para lidar com o agendamento de consultas
+    const appointmentForm = document.getElementById('appointmentForm');
+    appointmentForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const patientName = document.getElementById('patientName').value;
+      const appointmentDate = document.getElementById('appointmentDate').value;
+      const selectedDoctor = document.getElementById('doctor').value;
+      // Aqui você pode adicionar lógica para enviar os dados para o backend
+      // e agendar a consulta.
+      alert(`Consulta agendada para ${patientName} com ${selectedDoctor} em ${appointmentDate}`);
+    });
+  </script>
+</body>
+</html>

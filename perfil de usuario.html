@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil de Usuário</title>
+  <style>
+    /* Estilos CSS para o perfil de usuário */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .profile {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    img {
+      max-width: 100%;
+    }
+    h2 {
+      margin-top: 10px;
+    }
+    p {
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile">
+    <img src="user-avatar.jpg" alt="Foto de Perfil">
+    <h2>Nome do Usuário</h2>
+    <p>Email: usuario@example.com</p>
+    <p>Endereço: Rua Principal, 123</p>
+    <p>Telefone: (00) 1234-5678</p>
+    <button id="editProfile">Editar Perfil</button>
+  </div>
+  <script>
+    // Código JavaScript para lidar com a edição do perfil de usuário
+    const editProfileButton = document.getElementById('editProfile');
+    editProfileButton.addEventListener('click', function() {
+      // Redirecionar para a página de edição de perfil ou abrir um modal de edição.
+      // Aqui você pode adicionar a lógica para redirecionar ou exibir a página de edição.
+      alert('Redirecionar para a página de edição de perfil');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Envio de Documentos</title>
+  <style>
+    /* Estilos CSS para o formulário de envio de documentos */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    input[type="file"] {
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Envio de Documentos</h1>
+  <form id="documentUploadForm" enctype="multipart/form-data">
+    <input type="file" id="fileInput" name="document" accept=".pdf,.doc,.docx">
+    <button type="submit">Enviar Documento</button>
+  </form>
+  <script>
+    // Código JavaScript para lidar com o envio de documentos
+    const documentUploadForm = document.getElementById('documentUploadForm');
+    documentUploadForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const fileInput = document.getElementById('fileInput');
+      const selectedFile = fileInput.files[0];
+      if (selectedFile) {
+        // Aqui você pode adicionar lógica para enviar o arquivo para o backend
+        // e armazená-lo no servidor ou em um sistema de armazenamento.
+        alert(`Documento "${selectedFile.name}" enviado com sucesso!`);
+      } else {
+        alert('Selecione um documento para enviar.');
+      }
+    });
+  </script>
+</body>
+</html>

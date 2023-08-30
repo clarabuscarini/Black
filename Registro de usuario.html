@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Usuário</title>
+  <style>
+    /* Estilos CSS para o formulário */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #f525b6;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Registro de Usuário</h1>
+  <form id="registrationForm">
+    <input type="text" id="username" placeholder="Nome de Usuário" required>
+    <input type="password" id="password" placeholder="Senha" required>
+    <button type="submit">Registrar</button>
+  </form>
+  <script>
+    // Código JavaScript para lidar com o registro de usuário
+    const registrationForm = document.getElementById('registrationForm');
+    registrationForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      // Aqui você pode adicionar lógica para enviar os dados para o backend
+      // e realizar o registro do usuário no banco de dados.
+      alert(`Usuário "${username}" registrado com sucesso!`);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notificação por Email</title>
+  <style>
+    /* Estilos CSS para o formulário de notificação */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Notificação por Email</h1>
+  <form id="emailNotificationForm">
+    <input type="email" id="recipient" placeholder="Destinatário" required>
+    <input type="text" id="subject" placeholder="Assunto" required>
+    <textarea id="message" placeholder="Mensagem" rows="5" required></textarea>
+    <button type="submit">Enviar Notificação</button>
+  </form>
+  <script>
+    // Código JavaScript para lidar com o envio de notificação por email
+    const emailNotificationForm = document.getElementById('emailNotificationForm');
+    emailNotificationForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const recipient = document.getElementById('recipient').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      // Aqui você pode adicionar lógica para enviar a notificação por email.
+      alert(`Notificação enviada para ${recipient} com o assunto: "${subject}"`);
+    });
+  </script>
+</body>
+</html>

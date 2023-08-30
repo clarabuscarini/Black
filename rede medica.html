@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesquisa de Rede Médica</title>
+  <style>
+    /* Estilos CSS para o formulário de pesquisa */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pesquisa de Rede Médica</h1>
+  <form id="networkSearchForm">
+    <input type="text" id="location" placeholder="Digite a localização" required>
+    <input type="text" id="specialty" placeholder="Especialidade Médica">
+    <button type="submit">Pesquisar</button>
+  </form>
+  <div id="results">
+    <!-- Aqui os resultados da pesquisa serão inseridos dinamicamente -->
+  </div>
+  <script>
+    // Código JavaScript para lidar com a pesquisa de rede médica
+    const networkSearchForm = document.getElementById('networkSearchForm');
+    networkSearchForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const location = document.getElementById('location').value;
+      const specialty = document.getElementById('specialty').value;
+      // Aqui você pode adicionar lógica para enviar os dados para o backend
+      // e buscar informações sobre médicos e hospitais na localização e especialidade fornecidas.
+      // Após obter os resultados, você pode atualizar dinamicamente a seção de resultados.
+      const resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = `
+        <h2>Resultados da Pesquisa</h2>
+        <ul>
+          <li>Dr. Smith - Especialidade: Cardiologia</li>
+          <li>Dr. Johnson - Especialidade: Clínica Geral</li>
+          <li>Hospital Central - Especialidade: Diversas</li>
+        </ul>
+      `;
+    });
+  </script>
+</body>
+</html>

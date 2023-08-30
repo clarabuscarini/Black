@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Coparticipação</title>
+  <style>
+    /* Estilos CSS para o formulário de calculadora */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Calculadora de Coparticipação</h1>
+  <form id="copayCalculator">
+    <label for="totalCost">Custo Total da Consulta:</label>
+    <input type="number" id="totalCost" required>
+    <label for="copayPercentage">Porcentagem de Coparticipação (%):</label>
+    <input type="number" id="copayPercentage" required>
+    <button type="submit">Calcular Coparticipação</button>
+  </form>
+  <div id="copayResult"></div>
+  <script>
+    // Código JavaScript para calcular a coparticipação
+    const copayCalculator = document.getElementById('copayCalculator');
+    const copayResultDiv = document.getElementById('copayResult');
+
+    copayCalculator.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const totalCost = parseFloat(document.getElementById('totalCost').value);
+      const copayPercentage = parseFloat(document.getElementById('copayPercentage').value);
+
+      if (!isNaN(totalCost) && !isNaN(copayPercentage)) {
+        const copayAmount = (totalCost * copayPercentage) / 100;
+        const patientPay = totalCost - copayAmount;
+
+        // Exibir o resultado da coparticipação
+        copayResultDiv.innerHTML = `
+          <h2>Resultado da Coparticipação</h2>
+          <p>Custo Total da Consulta: R$ ${totalCost.toFixed(2)}</p>
+          <p>Porcentagem de Coparticipação: ${copayPercentage}%</p>
+          <p>Valor de Coparticipação: R$ ${copayAmount.toFixed(2)}</p>
+          <p>Paciente Paga: R$ ${patientPay.toFixed(2)}</p>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>

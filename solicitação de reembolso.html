@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitação de Reembolso</title>
+  <style>
+    /* Estilos CSS para o formulário de solicitação de reembolso */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Solicitação de Reembolso</h1>
+  <form id="reimbursementRequest">
+    <label for="policyNumber">Número da Apólice:</label>
+    <input type="text" id="policyNumber" required>
+    <label for="claimAmount">Valor da Solicitação (R$):</label>
+    <input type="number" id="claimAmount" required>
+    <label for="claimDescription">Descrição da Despesa:</label>
+    <textarea id="claimDescription" rows="4" required></textarea>
+    <button type="submit">Enviar Solicitação</button>
+  </form>
+  <div id="requestResult"></div>
+  <script>
+    // Código JavaScript para lidar com a solicitação de reembolso
+    const reimbursementRequest = document.getElementById('reimbursementRequest');
+    const requestResultDiv = document.getElementById('requestResult');
+
+    reimbursementRequest.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const policyNumber = document.getElementById('policyNumber').value;
+      const claimAmount = parseFloat(document.getElementById('claimAmount').value);
+      const claimDescription = document.getElementById('claimDescription').value;
+
+      // Aqui você pode adicionar lógica para enviar a solicitação para o backend
+      // e processar o reembolso. Por enquanto, apenas exibiremos um resultado simulado.
+      requestResultDiv.innerHTML = `
+        <h2>Solicitação Enviada</h2>
+        <p>Número da Apólice: ${policyNumber}</p>
+        <p>Valor da Solicitação: R$ ${claimAmount.toFixed(2)}</p>
+        <p>Descrição da Despesa: ${claimDescription}</p>
+        <p>Status: Aguardando Processamento</p>
+      `;
+    });
+  </script>
+</body>
+</html>
